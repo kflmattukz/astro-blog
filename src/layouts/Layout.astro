@@ -17,6 +17,14 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <div id="logo">mattz</div>
+        <a href="/">Home</a>
+        <a href="/blog">Blogs</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
     <slot />
   </body>
 </html>
