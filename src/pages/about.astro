@@ -1,7 +1,51 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const pageTitle = "About page";
+const identity = {
+  firstName: "Sulkifli",
+  lastName: "Asmunandar",
+  job: "Software developer | Frondend Developer | Web Developer",
+  hobby:
+    "Watching | Listening to music | Reading Comics/manga/manhwa/manhua | Coding of course",
+  country: "Indonesia",
+};
+const skills = [
+  "HTML",
+  "CSS",
+  "Javascript",
+  "Typescript",
+  "React",
+  "Astro",
+  "Svelte",
+  "Writing Docs",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
+<head>
+  <title>About page : {pageTitle}</title>
+</head>
 <Layout title="Welcome to Astro.">
   <h2>About page</h2>
+  <p>
+    Hello my name is {identity.firstName}
+    {identity.lastName} & i'm from {identity.country}
+  </p>
+  <p>My Hobbie is : {identity.hobby}</p>
+  <p>My job is: {identity.job}</p>
+  <p>
+    Skills : <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+  </p>
+
+  <div>
+    <p>Conditional render</p>
+    {happy && <p>Hello, I'm so happy</p>}
+    {finished && <p>Not ,finis yet</p>}
+    {goal && <p>my objective is to finish this tutorial in 3 days</p>}
+  </div>
 </Layout>
